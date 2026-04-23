@@ -1,3 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ff4d30; /* Vibrant Orange-Red */
+  --color-primary-dark: #e63e26;
+  --color-secondary: #1e1b1b; /* Rich Dark Brown/Black */
+  --color-accent: #fb923c; /* Warm Orange accent */
+  --color-bg-main: #fffaf9; /* Very subtle warm tint */
+}
+
+:root {
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  background-color: var(--color-bg-main);
+  color: var(--color-secondary);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top right, #fff1f0 0%, #fffaf9 100%);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphism Card */
+.premium-card {
+  @apply bg-white/80 backdrop-blur-md rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-white/20 p-10 w-full transition-all duration-300;
+}
+
+.premium-card:hover {
+  @apply shadow-[0_25px_60px_rgba(0,0,0,0.08)];
+}
+
+/* Modern Inputs */
+.premium-input {
+  @apply w-full px-4 py-3.5 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all duration-200 text-gray-700 placeholder:text-gray-400;
+}
+
+/* Stylish Buttons */
+.premium-button {
+  @apply w-full bg-primary text-white py-4 rounded-xl font-bold tracking-wide shadow-lg shadow-primary/20 hover:bg-primary-dark hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Links */
+.premium-link {
+  @apply text-primary hover:text-primary-dark font-semibold text-sm transition-colors duration-200;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 /* ============================================
    TrioPunch Bus — Global Design System
    ============================================ */
